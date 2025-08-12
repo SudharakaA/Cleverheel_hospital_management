@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             <div className="flex flex-col space-y-2 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>011-2507044</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
-                <span>123 Healthcare Ave, Medical City, MC 12345</span>
+                <span>No:1 Lotus Road, Colombo 01</span>
               </div>
             </div>
           </div>
@@ -93,11 +93,11 @@ const Footer: React.FC = () => {
         <div className="mt-8 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-1 text-sm text-gray-600">
-              <span>© {currentYear} CleverHeal.</span>
+              <span>© {currentYear} CleverHeal All Rights Reserved.</span>
             </div>
             <div className="flex items-center gap-6 mt-4 md:mt-0 text-sm text-gray-600">
               <a href="#" className="hover:text-primary transition-colors">
-                Emergency: 911
+                Emergency: 011-2507044
               </a>
               <a href="#" className="hover:text-primary transition-colors">
                 24/7 Support
