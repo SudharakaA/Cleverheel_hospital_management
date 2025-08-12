@@ -1,6 +1,6 @@
 # MediTrack Health Hub
 
-A comprehensive healthcare management platform designed for patients and medical professionals to streamline healthcare delivery and management.
+A comprehensive healthcare management platform designed for patients and medical professionals to streamline healthcare delivery and management
 
 ## Features
 
