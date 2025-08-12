@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
 
 const heroImg = "/hospital.jpg.jpg";
 
@@ -147,9 +148,7 @@ const Landing: React.FC = () => (
         </div>
       </section>
     </main>
-    <footer className="w-full text-center text-xs text-muted-foreground py-6 mt-10 opacity-70">
-      &copy; {new Date().getFullYear()} CleverHeal Private Hospital. Providing quality healthcare services.
-    </footer>
+  <Footer />
   </div>
 );
 
