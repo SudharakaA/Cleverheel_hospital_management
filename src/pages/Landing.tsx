@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import Footer from "@/components/Footer";
 
 const heroImg = "/hospital.jpg.jpg";
 
@@ -55,101 +54,177 @@ const Landing: React.FC = () => (
         </div>
       </div>
     </header>
-    <main className="flex-1 flex flex-col justify-center">
-      <section className="max-w-4xl mx-auto w-full px-4 sm:px-8 flex flex-col-reverse md:flex-row items-center gap-12 py-12">
-        <div className="w-full md:w-1/2 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 text-primary">
-            CleverHeal Private Hospital
-          </h1>
-          <p className="mb-6 text-lg text-muted-foreground">
-            Your trusted healthcare partner providing expert medical care with cutting-edge technology. Book appointments, search doctors by symptoms, and manage your health records seamlessly.
-          </p>
-          <div className="flex gap-4">
-            <Link to="/auth?tab=register">
-              <Button size="lg">Register as Patient</Button>
-            </Link>
-            <Button variant="outline" size="lg" asChild>
-              <a href="#features">Our Services</a>
-            </Button>
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src={heroImg}
-            alt="CleverHeal Hospital"
-            className="rounded-xl shadow-lg max-h-[320px] w-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      </section>
-      <section id="features" className="py-8 px-4 sm:px-0 max-w-6xl mx-auto w-full">
-        <h2 className="text-3xl font-bold text-center mb-8 text-primary">Our Services</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {features.map((feature) => (
-            <div
-              key={feature.name}
-              className="rounded-lg border bg-white p-6 shadow hover-scale transition"
-            >
-              <h3 className="text-lg font-semibold text-blue-700 mb-2">{feature.name}</h3>
-              <p className="text-muted-foreground text-sm">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      
-      <section className="py-12 px-4 sm:px-0 max-w-6xl mx-auto w-full">
-        <h2 className="text-3xl font-bold text-center mb-8 text-primary">How It Works</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-blue-600">1</span>
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Register & Login</h3>
-            <p className="text-muted-foreground text-sm">Create your patient account or login as a doctor/admin with your credentials.</p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-green-600">2</span>
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Find Doctors</h3>
-            <p className="text-muted-foreground text-sm">Search for doctors based on your symptoms and find the right specialist for your needs.</p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-purple-600">3</span>
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Book Appointment</h3>
-            <p className="text-muted-foreground text-sm">Schedule your appointment with your preferred date and time slot.</p>
-          </div>
-        </div>
-      </section>
+  <main className="flex-1 flex flex-col justify-center">
+    <section className="max-w-6xl mx-auto w-full px-6 sm:px-12 flex flex-col-reverse md:flex-row items-center gap-12 py-20">
+      {/* Left Content */}
+      <div className="w-full md:w-1/2 animate-fade-in space-y-6">
+        {/* Title */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          CleverHeal Private Hospital
+        </h1>
 
-      <section
-        id="get-started"
-        className="max-w-4xl px-4 mx-auto bg-blue-50 rounded-xl mt-16 py-12 flex flex-col items-center"
-      >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary text-center">Ready to Get Started?</h2>
-        <p className="text-muted-foreground mb-8 text-center max-w-2xl">
-          Join CleverHeal today and experience the future of healthcare management. Whether you're a patient seeking care or a medical professional, we have the tools you need.
+        {/* Subtitle */}
+        <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          Your trusted healthcare partner providing expert medical care with 
+          cutting-edge technology. Book appointments, search doctors by symptoms, 
+          and manage your health records seamlessly.
         </p>
-        <div className="flex flex-wrap gap-4 justify-center">
+
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap gap-4 pt-4">
           <Link to="/auth?tab=register">
-            <Button size="lg">Register as Patient</Button>
+            <Button size="lg" className="rounded-xl shadow-md hover:shadow-xl transition">
+              Register as Patient
+            </Button>
           </Link>
-          <Link to="/auth?tab=login">
-            <Button variant="outline" size="lg">Patient Login</Button>
-          </Link>
-          <Link to="/auth?tab=doctor-login">
-            <Button variant="outline" size="lg">Doctor Login</Button>
-          </Link>
-          <Link to="/auth?tab=admin-login">
-            <Button variant="outline" size="lg">Admin Login</Button>
-          </Link>
+          <Button
+            variant="outline"
+            size="lg"
+            className="rounded-xl border-2 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition"
+            asChild
+          >
+            <a href="#features">Our Services</a>
+          </Button>
         </div>
-      </section>
-    </main>
-  <Footer />
+      </div>
+
+      {/* Right Image */}
+      <div className="w-full md:w-1/2 flex justify-center relative">
+        <div className="absolute -z-10 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full top-12 right-12 animate-pulse"></div>
+        <img
+          src={heroImg}
+          alt="CleverHeal Hospital"
+          className="rounded-2xl shadow-2xl max-h-[400px] w-full object-cover hover:scale-[1.02] transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <section
+      id="features"
+      className="py-16 px-6 sm:px-0 max-w-6xl mx-auto w-full"
+    >
+      {/* Title */}
+      <h2 className="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Our Services
+      </h2>
+
+      {/* Features Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {features.map((feature, i) => (
+          <div
+            key={feature.name}
+            className="rounded-2xl border border-gray-100 bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+          >
+            {/* Icon Placeholder (optional) */}
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
+              <span className="text-xl font-bold">{i + 1}</span>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
+              {feature.name}
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section className="py-20 px-6 sm:px-0 max-w-6xl mx-auto w-full">
+  {/* How It Works */}
+  <h2 className="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    How It Works
+  </h2>
+
+  <div className="grid md:grid-cols-3 gap-10">
+    {[
+      {
+        step: "1",
+        color: "from-blue-500 to-blue-700",
+        title: "Register & Login",
+        desc: "Create your patient account or login as a doctor/admin with your credentials.",
+      },
+      {
+        step: "2",
+        color: "from-green-500 to-emerald-600",
+        title: "Find Doctors",
+        desc: "Search for doctors based on your symptoms and find the right specialist for your needs.",
+      },
+      {
+        step: "3",
+        color: "from-purple-500 to-pink-600",
+        title: "Book Appointment",
+        desc: "Schedule your appointment with your preferred date and time slot.",
+      },
+    ].map(({ step, color, title, desc }) => (
+      <div
+        key={step}
+        className="text-center rounded-2xl bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+      >
+        <div
+          className={`w-16 h-16 bg-gradient-to-r ${color} rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-md`}
+        >
+          {step}
+        </div>
+        <h3 className="text-xl font-semibold mb-3">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          {desc}
+        </p>
+      </div>
+    ))}
   </div>
+</section>
+
+{/* Get Started CTA */}
+<section
+  id="get-started"
+  className="max-w-5xl px-6 mx-auto bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl mt-20 py-16 text-center shadow-lg"
+>
+  <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 text-primary">
+    Ready to Get Started?
+  </h2>
+  <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
+    Join CleverHeal today and experience the future of healthcare management. 
+    Whether you're a patient seeking care or a medical professional, we have the tools you need.
+  </p>
+
+  <div className="flex flex-wrap gap-4 justify-center">
+    <Link to="/auth?tab=register">
+      <Button size="lg" className="rounded-xl shadow-md hover:shadow-xl transition">
+        Register as Patient
+      </Button>
+    </Link>
+    <Link to="/auth?tab=login">
+      <Button variant="outline" size="lg" className="rounded-xl">
+        Patient Login
+      </Button>
+    </Link>
+    <Link to="/auth?tab=doctor-login">
+      <Button variant="outline" size="lg" className="rounded-xl">
+        Doctor Login
+      </Button>
+    </Link>
+    <Link to="/auth?tab=admin-login">
+      <Button variant="outline" size="lg" className="rounded-xl">
+        Admin Login
+      </Button>
+    </Link>
+  </div>
+</section>
+</main>
+
+{/* Footer */}
+<footer className="w-full text-center text-sm text-gray-500 dark:text-gray-400 py-8 mt-16 border-t border-gray-200 dark:border-gray-700">
+<p>
+    &copy; {new Date().getFullYear()} <span className="font-semibold text-primary">CleverHeal Private Hospital</span>. All rights reserved.  
+  </p>
+</footer>
+</div>
 );
 
 export default Landing;
